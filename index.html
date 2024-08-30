@@ -3,58 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Paint</title>
 </head>
 <body>
-   <!-- Logo -->
-   <header>
-    <div class="logo">DSGN Paint</div>
-    <!-- Undo/Redo Buttons -->
-    <div class="undo-redo">
-      <button id="undo">Undo (0)</button>
-      <button id="redo">Redo (0)</button>
-    </div>
-  </header>
+   <div class="toolbar">
+    <input type="color" id="colorPicker" class="color-picker" value="#000000">
+    <input type="range" id="brushSize" min="1" max="50" value="5">
+    <button onclick="clearCanvas()">Clear</button>
+</div>
 
-  <div class="main-container">
-    <!-- Toolbar -->
-    <aside class="toolbar">
-      <button class="tool" id="pencil">Pencil</button>
-      <button class="tool" id="eraser">Eraser</button>
-      <button class="tool" id="fill">Fill</button>
-      <button class="tool" id="rectangle">Rectangle</button>
-      <button class="tool" id="circle">Circle</button>
+<!-- Canvas -->
+<canvas id="paintCanvas" width="800" height="600"></canvas>
 
-    </aside>
-
-    <!-- Work Area -->
-    <div class="work-area">
-      <!-- Zoom Buttons -->
-      <div class="zoom-buttons">
-        <button id="zoomIn">Zoom In</button>
-        <button id="zoomOut">Zoom Out</button>
-      </div>
-      <!-- Area Canvas -->
-      <canvas id="canvas" width="800" height="600"></canvas>
-    </div>
-
-    <!-- Layer Bar -->
-    <aside class="layer-bar">
-      <h3>Layers</h3>
-      <button id="addLayer">Add Layer</button>
-      <ul id="layers"></ul>
-    </aside>
-  </div>
-
-  <!-- Properties Bar -->
-  <div class="properties-bar">
-
-    <h3>Properties</h3>
-    <label for="lineWidth">Line Width:</label>
-    <input type="range" id="lineWidth" min="1" max="10" value="1">
-    <label for="color">Color:</label>
-    <input type="color" id="color" value="#000000">
-
-  </div>
+  <script src="script.js"></script>
 </body>
 </html>
