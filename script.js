@@ -1,28 +1,28 @@
 const canvas = document.getElementById('paintCanvas');
 const ctx = canvas.getContext('2d');
-let painting = false;  // Track painting status
+let painting = false; 
 let brushColor = document.getElementById('colorPicker').value;
 let brushSize = document.getElementById('brushSize').value;
 
-// Start painting on mouse down
+// Start painting 
 function startPosition(e) {
     painting = true;
-    draw(e);  // Draw a dot immediately on click
+    draw(e);  
 }
 
-// Stop painting on mouse up or mouse out
+// Stop painting 
 function endPosition() {
     painting = false;
-    ctx.beginPath();  // Reset the path for new lines
+    ctx.beginPath();  
 }
 
-// Drawing function
+// Drawing 
 function draw(e) {
-    if (!painting) return;  // Exit if not painting
+    if (!painting) return;  
 
-    ctx.lineWidth = brushSize;  // Set brush size
-    ctx.lineCap = 'round';      // Round line endings
-    ctx.strokeStyle = brushColor;  // Set brush color
+    ctx.lineWidth = brushSize;  
+    ctx.lineCap = 'round';      
+    ctx.strokeStyle = brushColor;  
 
     ctx.lineTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
     ctx.stroke();
@@ -30,23 +30,22 @@ function draw(e) {
     ctx.moveTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
 }
 
-// Event listeners for drawing actions
 canvas.addEventListener('mousedown', startPosition);
 canvas.addEventListener('mouseup', endPosition);
 canvas.addEventListener('mouseout', endPosition);
 canvas.addEventListener('mousemove', draw);
 
-// Change brush color
+// brush color
 document.getElementById('colorPicker').addEventListener('change', (e) => {
     brushColor = e.target.value;
 });
 
-// Change brush size
+// brush size
 document.getElementById('brushSize').addEventListener('change', (e) => {
     brushSize = e.target.value;
 });
 
-// Clear the canvas
+// Clear
 function clearCanvas() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
