@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+   <!-- Logo of DSGN -->
+   <header>
+    <div class="logo">DSGN Paint</div>
+    <!-- Undo/Redo Buttons -->
+    <div class="undo-redo">
+      <button id="undo">Undo (0)</button>
+      <button id="redo">Redo (0)</button>
+    </div>
+  </header>
+
+  <div class="main-container">
+    <!-- Toolbar with Tools -->
+    <aside class="toolbar">
+      <button class="tool" id="pencil">Pencil</button>
+      <button class="tool" id="eraser">Eraser</button>
+      <button class="tool" id="fill">Fill</button>
+      <button class="tool" id="rectangle">Rectangle</button>
+      <button class="tool" id="circle">Circle</button>
+      <!-- Add more tools as needed -->
+    </aside>
+
+    <!-- Work Area -->
+    <div class="work-area">
+      <!-- Zoom Buttons -->
+      <div class="zoom-buttons">
+        <button id="zoomIn">Zoom In</button>
+        <button id="zoomOut">Zoom Out</button>
+      </div>
+      <!-- Canvas Area -->
+      <canvas id="canvas" width="800" height="600"></canvas>
+    </div>
+
+    <!-- Layer Bar -->
+    <aside class="layer-bar">
+      <h3>Layers</h3>
+      <button id="addLayer">Add Layer</button>
+      <ul id="layers"></ul>
+    </aside>
+  </div>
+
+  <!-- Properties Bar -->
+  <div class="properties-bar">
+    <h3>Properties</h3>
+    <!-- Example properties for Pencil Tool -->
+    <label for="lineWidth">Line Width:</label>
+    <input type="range" id="lineWidth" min="1" max="10" value="1">
+    <label for="color">Color:</label>
+    <input type="color" id="color" value="#000000">
+    <!-- Add more properties as needed -->
+  </div>
+</body>
+</html>
